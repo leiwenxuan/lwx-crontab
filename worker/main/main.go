@@ -2,11 +2,11 @@ package main
 
 import (
 	"runtime"
-	"time"
 
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
 	_ "github.com/leiwenxuan/crontab/worker"
+	_ "github.com/leiwenxuan/crontab/worker/core"
 	"github.com/sirupsen/logrus"
 	"github.com/tietang/props/ini"
 	"github.com/tietang/props/kvs"
@@ -28,8 +28,5 @@ func main() {
 	base.InitLog(conf)
 	app := infra.New(conf)
 	app.Start()
-	time.Sleep(2 * time.Second)
-	//服务注册，注册本机IP到etcd，并不断续租
-	//err := worker.InitRegister()
-	//logrus.Println(err)
+
 }

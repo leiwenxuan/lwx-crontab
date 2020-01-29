@@ -4,10 +4,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coreos/etcd/clientv3"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/leiwenxuan/crontab/infra"
 	log "github.com/sirupsen/logrus"
+	"go.etcd.io/etcd/clientv3"
 )
 
 //dbx 数据库实例

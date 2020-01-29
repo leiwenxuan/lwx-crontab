@@ -3,7 +3,6 @@ package base
 import (
 	"os"
 	"os/signal"
-	"reflect"
 	"syscall"
 
 	"github.com/leiwenxuan/crontab/infra"
@@ -41,15 +40,11 @@ func (s *HookStarter) Start(ctx infra.StarterContext) {
 	starters := infra.GetStarters()
 
 	for _, s := range starters {
-		typ := reflect.TypeOf(s)
-		log.Infof("【Register Notify Stop】:%s.Stop()", typ.String())
+		//typ := reflect.TypeOf(s)
+		//log.Infof("【Register Notify Stop】:%s.Stop()", typ.String())
 		Register(func() {
 			s.Stop(ctx)
 		})
 	}
 
 }
-
-//func (s *HookStarter) StartBlocking() bool {
-//	return true
-//}

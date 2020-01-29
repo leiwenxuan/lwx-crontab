@@ -1,12 +1,13 @@
 package base
 
 import (
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/logger"
-	irisrecover "github.com/kataras/iris/middleware/recover"
-	log "github.com/sirupsen/logrus"
-	"github.com/leiwenxuan/crontab/infra"
 	"time"
+
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/middleware/logger"
+	irisrecover "github.com/kataras/iris/v12/middleware/recover"
+	"github.com/leiwenxuan/crontab/infra"
+	log "github.com/sirupsen/logrus"
 )
 
 var irisApplication *iris.Application

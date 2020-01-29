@@ -7,12 +7,44 @@ import (
 	"net"
 	"time"
 
+	"github.com/leiwenxuan/crontab/infra"
+
 	"github.com/leiwenxuan/crontab/common"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/coreos/etcd/clientv3"
 	"github.com/leiwenxuan/crontab/infra/base"
+	"go.etcd.io/etcd/clientv3"
 )
+
+type EtcdRegisterStarter struct {
+	infra.BaseStarter
+}
+
+func (s *EtcdRegisterStarter) Start(ctx infra.StarterContext) {
+	var (
+		kv      clientv3.KV
+		lease   clientv3.Lease
+		localIp string
+		err     error
+	)
+	// 获取etcd clientMongo
+	client := base.EtcdClient()
+	// 得到kv 和 lease 租约id
+	kv = clientv3.NewKV(client)
+	lease = clientv3.NewLease(client)
+	// 获取本机IP
+	if localIp, err = GetLocalIP(); err != nil {
+		return
+	}
+	GRegister = &RegisterEtcd{
+		client:  client,
+		kv:      kv,
+		lease:   lease,
+		localIP: localIp,
+	}
+	// 服务注册
+	go GRegister.keepOnline()
+}
 
 // 注册节点到etcd: /cron/workers/IP地址
 type RegisterEtcd struct {
@@ -75,6 +107,7 @@ func (register *RegisterEtcd) keepOnline() {
 		}
 		// 自动续租
 		if keepAliveChan, err = register.lease.KeepAlive(context.TODO(), leaseGrantResp.ID); err != nil {
+			log.Debug("err", err)
 			goto RETRY
 		}
 

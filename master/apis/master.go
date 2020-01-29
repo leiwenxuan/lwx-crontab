@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/kataras/iris"
+	"github.com/iris-contrib/middleware/cors"
+	"github.com/kataras/iris/v12"
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
 	"github.com/leiwenxuan/crontab/master/services"
@@ -26,7 +27,13 @@ func (m *MasterApi) Init() {
 	m.logSer = services.GetLoggerMangerServer()
 	m.jobSer = services.GetJobMangerServer()
 	m.workSer = services.GetWorkerServer()
-	groupRouter := base.Iris().Party("/v1/master")
+	crs := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"HEAD", "GET", "POST", "PUT", "PATCH", "DELETE"},
+		AllowedHeaders:   []string{"*"},
+		AllowCredentials: true,
+	})
+	groupRouter := base.Iris().Party("/v1/master", crs).AllowMethods(iris.MethodOptions)
 	// 日志
 	groupRouter.Get("/job/log", m.LogList)
 	// 任务
@@ -168,8 +175,15 @@ func (m *MasterApi) WorkList(ctx iris.Context) {
 		ctx.JSON(&r)
 		logrus.Error("err m.workSer.WorkerList(): ", err)
 	}
-
-	r.Data = result
+	var workListDict []interface{}
+	for _, v := range result {
+		var workDict = map[string]string{
+			"workerIp": "",
+		}
+		workDict["workerIp"] = v
+		workListDict = append(workListDict, workDict)
+	}
+	r.Data = workListDict
 	_, _ = ctx.JSON(&r)
 	logrus.Infof("[/worker/list]成功:%s\t%d\n", time.Now().Format("2006-01-02 15:04:05"), len(result))
 

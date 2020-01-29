@@ -1,9 +1,6 @@
 package infra
 
 import (
-	"reflect"
-
-	log "github.com/sirupsen/logrus"
 	"github.com/tietang/props/kvs"
 )
 
@@ -33,8 +30,8 @@ func (b *BootApplication) Start() {
 //程序初始化
 func (e *BootApplication) init() {
 	for _, v := range GetStarters() {
-		typ := reflect.TypeOf(v)
-		log.Debugf("Initializing: PriorityGroup=%d,Priority=%d,type=%s", v.PriorityGroup(), v.Priority(), typ.String())
+		//typ := reflect.TypeOf(v)
+		//log.Debugf("Initializing: PriorityGroup=%d,Priority=%d,type=%s", v.PriorityGroup(), v.Priority(), typ.String())
 		v.Init(e.starterCtx)
 	}
 }
@@ -43,8 +40,8 @@ func (e *BootApplication) init() {
 func (e *BootApplication) setup() {
 
 	for _, v := range GetStarters() {
-		typ := reflect.TypeOf(v)
-		log.Debug("Setup: ", typ.String())
+		//typ := reflect.TypeOf(v)
+		//log.Debug("Setup: ", typ.String())
 		v.Setup(e.starterCtx)
 	}
 
@@ -55,8 +52,8 @@ func (e *BootApplication) start() {
 
 	for i, v := range GetStarters() {
 
-		typ := reflect.TypeOf(v)
-		log.Debug("Starting: ", typ.String())
+		//typ := reflect.TypeOf(v)
+		//log.Debug("Starting: ", typ.String())
 		if v.StartBlocking() {
 			if i+1 == len(GetStarters()) {
 				v.Start(e.starterCtx)
@@ -74,8 +71,8 @@ func (e *BootApplication) start() {
 func (e *BootApplication) Stop() {
 
 	for _, v := range GetStarters() {
-		typ := reflect.TypeOf(v)
-		log.Debug("Stoping: ", typ.String())
+		//typ := reflect.TypeOf(v)
+		//log.Debug("Stoping: ", typ.String())
 		v.Stop(e.starterCtx)
 	}
 }

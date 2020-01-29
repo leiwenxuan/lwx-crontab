@@ -1,10 +1,9 @@
 package infra
 
 import (
-	log "github.com/sirupsen/logrus"
-	"github.com/tietang/props/kvs"
-	"reflect"
 	"sort"
+
+	"github.com/tietang/props/kvs"
 )
 
 const (
@@ -74,8 +73,8 @@ func (r *starterRegister) Register(starter Starter) {
 		r.nonBlockingStarters = append(r.nonBlockingStarters, starter)
 	}
 
-	typ := reflect.TypeOf(starter)
-	log.Infof("Register starter: %s", typ.String())
+	//typ := reflect.TypeOf(starter)
+	//log.Infof("Register starter: %s", typ.String())
 }
 
 var StarterRegister *starterRegister = &starterRegister{}

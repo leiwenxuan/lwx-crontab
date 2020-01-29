@@ -3,13 +3,14 @@ package base
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net"
 	"time"
 
-	"github.com/coreos/etcd/clientv3"
 	"github.com/leiwenxuan/crontab/common"
 	"github.com/leiwenxuan/crontab/infra"
 	log "github.com/sirupsen/logrus"
+	"go.etcd.io/etcd/clientv3"
 )
 
 type EtcdRegisterStarter struct {
@@ -71,6 +72,7 @@ func (register *RegisterEtcd) keepOnline() {
 		cancelCtx      context.Context
 		cancelFunc     context.CancelFunc
 	)
+	fmt.Println("register:  ", register)
 	for {
 		// 注册路径
 		regKey = common.JOB_WORKER_DIR + register.localIP
@@ -78,6 +80,7 @@ func (register *RegisterEtcd) keepOnline() {
 
 		// 创建租约， 10秒
 		if leaseGrantResp, err = register.lease.Grant(context.TODO(), 10); err != nil {
+			log.Info(".lease.Grant(context.TODO(), 10)", err)
 			goto RETRY
 		}
 		// 自动续租
@@ -86,7 +89,7 @@ func (register *RegisterEtcd) keepOnline() {
 		}
 
 		cancelCtx, cancelFunc = context.WithCancel(context.TODO())
-		// 注册到， etcd， 自动续租
+		// 注册到etcd,自动续租
 		if _, err = register.kv.Put(cancelCtx, regKey, "", clientv3.WithLease(leaseGrantResp.ID)); err != nil {
 			goto RETRY
 		}
@@ -96,6 +99,7 @@ func (register *RegisterEtcd) keepOnline() {
 			case keepAliveReap = <-keepAliveChan:
 				if keepAliveReap == nil {
 					// 续租失败
+					log.Error(keepAliveReap)
 					goto RETRY
 				}
 			}
@@ -105,6 +109,7 @@ func (register *RegisterEtcd) keepOnline() {
 		if cancelFunc != nil {
 			// 当cancelfunc 创建成功后， 重新续租失败， 取消
 			log.Error("register 续租失败", time.Now().Format("2006-01-02 15:04:05"))
+			log.Error("register 续租失败", err)
 			cancelFunc()
 		}
 	}

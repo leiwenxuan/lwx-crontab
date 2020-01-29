@@ -6,8 +6,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/coreos/etcd/clientv3"
+	"github.com/sirupsen/logrus"
+
 	"github.com/leiwenxuan/crontab/infra/base"
+	"go.etcd.io/etcd/clientv3"
 
 	"github.com/leiwenxuan/crontab/master/services"
 )
@@ -111,15 +113,17 @@ func (j JobServer) KillJob(name string) (err error) {
 	)
 
 	killKey = JOB_SAVE_DIR + name
+	logrus.Info("killKey： ", killKey)
 	client := base.EtcdClient()
 	kv := clientv3.NewKV(client)
 	lease := clientv3.NewLease(client)
 
-	if leaseGrantResp, err = lease.Grant(context.TODO(), 1); err != nil {
+	if leaseGrantResp, err = lease.Grant(context.TODO(), 5); err != nil {
 		return
 	}
 	// 租约
 	leaseId = leaseGrantResp.ID
+	logrus.Info("leaseId: ", leaseId)
 	// 设置killer 标记
 	if _, err = kv.Put(context.TODO(), killKey, "", clientv3.WithLease(leaseId)); err != nil {
 		return

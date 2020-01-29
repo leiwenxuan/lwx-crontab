@@ -1,16 +1,16 @@
-package worker
+package main
 
 import (
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
+	"github.com/leiwenxuan/crontab/worker"
 )
 
 func init() {
 	infra.Register(&base.PropsStarter{})
 	infra.Register(&base.EtcdStarter{})
-	infra.Register(&base.EtcdRegisterStarter{})
-	infra.Register(&base.ValidatorStarter{})
-	infra.Register(&base.IrisServerStarter{})
-	infra.Register(&infra.WebApiStarter{})
+	infra.Register(&worker.EtcdRegisterStarter{})
+	infra.Register(&worker.WatchRegisterStarter{})
 	infra.Register(&base.HookStarter{})
+
 }

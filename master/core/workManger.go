@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/coreos/etcd/clientv3"
 	"github.com/leiwenxuan/crontab/infra/base"
 	"github.com/leiwenxuan/crontab/master/services"
+	"go.etcd.io/etcd/clientv3"
 )
 
 var _ services.WorkerMangerServer = new(WorkServer)
