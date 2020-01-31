@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="92ce2c31-fb59-4822-bbc7-90f3b1de9476" name="centos7-1" url="http://192.168.1.102">
+        <fileTransfer host="192.168.1.102" port="22" rootFolder="/home/server/app/lwx-crontab" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
