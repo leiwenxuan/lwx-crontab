@@ -11,7 +11,7 @@ func init() {
 	infra.Register(&base.EtcdStarter{})
 	infra.Register(&worker.EtcdRegisterStarter{})
 	infra.Register(&base.MongoDBStarter{})
-	infra.Register(&worker.WatchRegisterStarter{})
+	//infra.Register(&worker.WatchRegisterStarter{})
 	infra.Register(&base.HookStarter{})
 
 }

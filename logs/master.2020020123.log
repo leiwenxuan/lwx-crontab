@@ -1,0 +1,1 @@
+time="2020-02-01T23:01:59+08:00" level=error msg="[github.com/kataras/golog.integrateExternalLogger.func1(golog@v0.0.10/integration.go:28)] http: Server closed" func=github.com/kataras/golog.integrateExternalLogger.func1 file="golog@v0.0.10/integration.go:28"
