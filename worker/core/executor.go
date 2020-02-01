@@ -3,6 +3,7 @@ package core
 import (
 	"context"
 	"os/exec"
+	"sync"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -70,21 +71,18 @@ func (executor *Executor) ExecutorJob(info *services.JobExecuteInfo) {
 	}()
 }
 
-func InitExecutor() (err error) {
+type ExecutorInterface struct {
+}
+
+var executorJob sync.Once
+
+func init() {
+	executorJob.Do(func() {
+		services.IExecutorServer = new(ExecutorInterface)
+	})
+}
+
+func (e *ExecutorInterface) InitExecutor() (err error) {
 	G_executor = &Executor{}
 	return
 }
-
-func init() {
-	logrus.Debug("InitExecutor(): 初始化执行器")
-	_ = InitExecutor()
-
-}
-
-//var executoJob sync.Once
-//
-//func init() {
-//	executoJob.Do(func() {
-//		services.IExecutorServer = new(Executor)
-//	})
-//}
