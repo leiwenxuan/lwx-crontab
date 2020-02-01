@@ -1,10 +1,11 @@
-package worker
+package services
 
 import (
 	"time"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/leiwenxuan/crontab/infra"
-	"github.com/leiwenxuan/crontab/worker/services"
 )
 
 type WatchRegisterStarter struct {
@@ -12,12 +13,17 @@ type WatchRegisterStarter struct {
 }
 
 func (s *WatchRegisterStarter) Start(ctx infra.StarterContext) {
-	jobManger := services.GetJobMangerServer()
+	jobManger := GetJobMangerServer()
 	// 初始化job管理器
 	_ = jobManger.InitJobManger()
 	// 初始化日志
-	logManger := services.GetLogManger()
+	logManger := GetLogManger()
 	_ = logManger.InitLogSink()
+	// 服务注册
+	if err := InitRegister(); err != nil {
+		logrus.Error("服务注册失败", err)
+	}
+
 	for {
 		time.Sleep(1 * time.Second)
 	}

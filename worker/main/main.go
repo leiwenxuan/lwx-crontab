@@ -7,7 +7,8 @@ import (
 
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
-	_ "github.com/leiwenxuan/crontab/worker"
+
+	//_ "github.com/leiwenxuan/crontab/worker"
 	_ "github.com/leiwenxuan/crontab/worker/core"
 	"github.com/sirupsen/logrus"
 	"github.com/tietang/props/ini"
@@ -37,7 +38,7 @@ func main() {
 	// 初始化job管理器
 	logrus.Debug("初始化job管理器")
 	_ = services.GetJobMangerServer().InitJobManger()
-
+	_ = services.InitRegister()
 	// 初始化日志
 	_ = services.GetLogManger().InitLogSink()
 	logrus.Debug("初始化日志")
