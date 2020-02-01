@@ -1,6 +1,7 @@
 package apis
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -48,6 +49,110 @@ func (m *MasterApi) Init() {
 
 	// 3.1 健康节点
 	groupRouter.Get("/worker/list", m.WorkList)
+
+	// 登录用户
+	groupRouter.Post("/login", m.LoginUser)
+	// 菜单栏
+
+	groupRouter.Get("/menus", m.Menus)
+
+}
+
+type LoginUser struct {
+	Id       int    `json:"id"`
+	Rid      int    `json:"rid"`
+	Username string `json:"username"`
+	Mobile   string `json:"mobile"`
+	Email    string `json:"email"`
+	Token    string `json:"token"`
+}
+
+type PurviewMenus struct {
+	ID       int         `json:"id"`
+	AuthName string      `json:"authName"`
+	Path     interface{} `json:"path"`
+	Children []Children  `json:"children"`
+}
+type Children struct {
+	ID       int           `json:"id"`
+	AuthName string        `json:"authName"`
+	Path     interface{}   `json:"path"`
+	Children []interface{} `json:"children"`
+}
+
+func (m *MasterApi) Menus(ctx iris.Context) {
+	r := base.Res{
+		Code: base.ResCodeOk,
+	}
+	var menusList = ` [
+        {
+            "id": 125,
+            "authName": "健康检查",
+            "path": "worker",
+            "children": [
+                {
+                    "id": 110,
+                    "authName": "Worker节点",
+                    "path": "worker",
+                    "children": [],
+                    "order": null
+                }
+            ],
+            "order": 1
+        },
+        {
+            "id": 103,
+            "authName": "定时任务",
+            "path": "job",
+            "children": [
+                {
+                    "id": 111,
+                    "authName": "任务列表",
+                    "path": "job",
+                    "children": [],
+                    "order": null
+                }
+            ],
+            "order": 2
+        }
+    ]`
+
+	var menusWork []*PurviewMenus
+	if err := json.Unmarshal([]byte(menusList), &menusWork); err != nil {
+		logrus.Error("转码失败", err)
+	}
+	//var oneMenusWork = &PurviewMenus{
+	//	ID:       100,
+	//	AuthName: "健康节点",
+	//	Path:     "/worker/list",
+	//	Children: nil,
+	//}
+	//r.Data = []interface{}{oneMenusWork}
+	r.Data = menusWork
+
+	r.Code = 200
+	_, _ = ctx.JSON(&r)
+	logrus.Infof("[/login]成功:%s\t%+v\n", time.Now().Format("2006-01-02 15:04:05"))
+
+}
+
+func (m *MasterApi) LoginUser(ctx iris.Context) {
+	r := base.Res{
+		Code: base.ResCodeOk,
+	}
+	var login = &LoginUser{
+		Id:       100,
+		Rid:      0,
+		Username: "雷文轩",
+		Mobile:   "00000000",
+		Email:    "00000",
+		Token:    "token",
+	}
+	r.Data = login
+	r.Code = 200
+	_, _ = ctx.JSON(&r)
+	logrus.Infof("[/login]成功:%s\t%+v\n", time.Now().Format("2006-01-02 15:04:05"))
+
 }
 
 type DeleteJob struct {
@@ -194,24 +299,24 @@ func (m *MasterApi) LogList(ctx iris.Context) {
 	var err error
 	logParam := services.LogParam{}
 	logParam.Name = ctx.URLParamDefault("name", "test")
-	logParam.Limit = ctx.URLParamInt64Default("limit", 1)
-	if err != nil {
-		logrus.Error("ctx.URLParamInt64(limit)", err)
-	}
+	logParam.Limit = ctx.URLParamInt64Default("limit", 30)
+
 	logParam.Skip = ctx.URLParamInt64Default("skip", 0)
-	if err != nil {
-		logrus.Error("ctx.URLParamInt64(skip)", err)
-	}
 	r := base.Res{Code: base.ResCodeOk}
 	fmt.Println("m.logSer", m.logSer)
-	result, err := m.logSer.ListLog(logParam.Name, logParam.Skip, logParam.Skip)
+	result, count, err := m.logSer.ListLog(logParam.Name, logParam.Skip, logParam.Limit)
 	if err != nil {
 		r.Code = base.ResCodeRequestParamsError
 		r.Message = err.Error()
 		_, _ = ctx.JSON(&r)
 		logrus.Error(err)
 	}
-	r.Data = result
+	var data = map[string]interface{}{
+		"count": count,
+		"data":  result,
+	}
+
+	r.Data = data
 	_, _ = ctx.JSON(&r)
 
 }

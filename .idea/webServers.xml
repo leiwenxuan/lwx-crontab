@@ -10,6 +10,22 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="0727e557-a7bd-48b7-91f4-b50e06b5ede5" name="centos7-2" url="http://192.168.1.103">
+        <fileTransfer host="192.168.1.103" port="22" rootFolder="/home/server/app/lwx-crontab" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8c9cbfe0-2ca6-4937-b826-f41862a8cdaa" name="centos7-3" url="http://192.168.1.104">
+        <fileTransfer host="192.168.1.104" port="22" rootFolder="/home/server/app/lwx-crontab" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

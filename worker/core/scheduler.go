@@ -1,7 +1,6 @@
 package core
 
 import (
-	"fmt"
 	"sync"
 	"time"
 
@@ -10,7 +9,7 @@ import (
 	"github.com/leiwenxuan/crontab/worker/services"
 )
 
-var _ services.SchedulerServer = new(SchedulerJobSer)
+var _ services.SchedulerServer = new(SchedulerInterface)
 
 type SchedulerSer struct {
 	jobEventChan      chan *services.JobEvent              // etcd任务事件队列
@@ -23,10 +22,10 @@ var (
 	Gscheduler *SchedulerSer
 )
 
-type SchedulerJobSer struct {
+type SchedulerInterface struct {
 }
 
-func (s SchedulerJobSer) InitScheduler() (err error) {
+func (s SchedulerInterface) InitScheduler() (err error) {
 	Gscheduler = &SchedulerSer{
 		jobEventChan:      make(chan *services.JobEvent, 1000),
 		jobPlanTable:      make(map[string]*services.JobSchedulePlan),
@@ -43,9 +42,8 @@ var onceScheduler sync.Once
 
 func init() {
 	onceScheduler.Do(func() {
-		services.ISchedulerServer = new(SchedulerJobSer)
-		logrus.Debug("调度器初始化")
-		_ = services.GetSchedulerServer().InitScheduler()
+		services.ISchedulerServer = new(SchedulerInterface)
+
 	})
 }
 
@@ -137,10 +135,30 @@ func (s *SchedulerSer) TrySchedule() (schdulerAfter time.Duration) {
 }
 
 func (s *SchedulerSer) HandleJobResult(result *services.JobExecuteResult) {
-	//var joblog *services.JobLog
+
+	var jobLog *services.JobLog
 	delete(s.jobExecutingTable, result.ExecuteInfo.Job.Name)
 	//if result.Err  != ERR_LOCK_ALREADY_REQUIRED
-	fmt.Println("任务执行完成")
+	// 生产日志
+	if result.Err != ERR_LOCK_ALREADY_REQUIRED {
+		jobLog = &services.JobLog{
+			JobName:      result.ExecuteInfo.Job.Name,
+			Command:      result.ExecuteInfo.Job.Command,
+			Output:       string(result.Output),
+			PlanTime:     result.ExecuteInfo.PlanTime.UnixNano() / 1000 / 1000,
+			ScheduleTime: result.ExecuteInfo.RealTime.UnixNano() / 1000 / 1000,
+			StartTime:    result.StartTime.UnixNano() / 1000 / 1000,
+			EndTime:      result.EndTime.UnixNano() / 1000 / 1000,
+		}
+		if result.Err != nil {
+			jobLog.Err = result.Err.Error()
+		} else {
+			jobLog.Err = ""
+		}
+		GLogSink.Append(jobLog)
+	}
+	logrus.Info("任务执行完成:  ", result.ExecuteInfo.Job.Name)
+
 	return
 }
 

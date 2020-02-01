@@ -25,7 +25,9 @@ const (
 	JOB_EVENT_DELETE = 2
 
 	// 强杀任务事件
-	JOB_EVENT_KILL = 3
+	JOB_EVENT_KILL      = 3
+	JobLogCommitTimeout = 5000
+	JobLogBatchSize     = 100
 )
 
 var (
@@ -41,4 +43,10 @@ func ExtractWorkerIP(regKey string) string {
 // 从/cron/killer/job10提取job10
 func ExtractKillerName(killerKey string) string {
 	return strings.TrimPrefix(killerKey, JOB_KILLER_DIR)
+}
+
+// 从etcd的key中提取任务名
+// /cron/jobs/job10抹掉/cron/jobs/
+func ExtractJobName(jobKey string) string {
+	return strings.TrimPrefix(jobKey, JOB_SAVE_DIR)
 }

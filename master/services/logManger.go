@@ -15,5 +15,5 @@ func GetLoggerMangerServer() LoggerMongerServer {
 
 type LoggerMongerServer interface {
 	// 查看日志
-	ListLog(taskName string, skip int64, limit int64) (jobLog []JobLog, err error)
+	ListLog(taskName string, skip int64, limit int64) (jobLog []JobLog, count int64, err error)
 }

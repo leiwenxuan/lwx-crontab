@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29000076-a7f6-471a-a951-9176d06c9a7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/master.2020012910.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/master.2020012910.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/apis/master.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/apis/master.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/core/jobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/core/jobManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/core/job_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/core/job_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/core/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/core/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/core/log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/core/log_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../master/services/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../master/services/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/JobManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crontab.go" beforeDir="false" afterPath="$PROJECT_DIR$/crontab.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/executor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobLock.go" beforeDir="false" afterPath="$PROJECT_DIR$/jobLock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler.go" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/../main/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../services/Executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/../services/Executor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../services/jobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/../services/jobManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../services/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/../services/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../watch_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/../watch_register.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1XC5nT7Ec3nA0tJjmXSm2oBSvh2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../logAgent" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2469" y="168" key="FileChooserDialogImpl" timestamp="1580537432292">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2469" y="168" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580537432292" />
+  </component>
+</project>

@@ -1,0 +1,2 @@
+time="2020-01-30T02:46:32+08:00" level=error msg="[github.com/leiwenxuan/crontab/worker.(*RegisterEtcd).keepOnline(worker/Register.go:133)] register 续租失败2020-01-30 02:46:31" func="github.com/leiwenxuan/crontab/worker.(*RegisterEtcd).keepOnline" file="worker/Register.go:133"
+time="2020-01-30T02:46:40+08:00" level=error msg="[github.com/leiwenxuan/crontab/worker.(*RegisterEtcd).keepOnline(worker/Register.go:133)] register 续租失败2020-01-30 02:46:40" func="github.com/leiwenxuan/crontab/worker.(*RegisterEtcd).keepOnline" file="worker/Register.go:133"

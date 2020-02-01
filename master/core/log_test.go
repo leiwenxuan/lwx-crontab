@@ -21,9 +21,9 @@ func TestLogServer_ListLog(t *testing.T) {
 	app := infra.New(conf)
 	app.Start()
 	log := new(LogServer)
-	result, err := log.ListLog("", 0, 5)
+	result, count, err := log.ListLog("work_03", 0, 60)
 	if err != nil {
 		fmt.Println("err", err)
 	}
-	fmt.Println(result)
+	fmt.Println(len(result), count)
 }

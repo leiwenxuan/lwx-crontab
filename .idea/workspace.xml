@@ -2,35 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d84069f-7e9c-4832-ab29-7a69a9dc7f54" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/getIp/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/master.2020012714.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/master.2020012715.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/master/main/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/core/JobManger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/core/crontab.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/core/executor.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/core/jobLock.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/core/scheduler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/services/Protocol.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/services/jobManger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/services/scheduler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker/watch_register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker/core/.idea/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/etcd.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/etcd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/etcd_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/etcd_register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/hook.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/hook.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/iris_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/iris_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/boot.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/boot.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/starer.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/starer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/master.2020012910.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/master.2020012910.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/master/apis/master.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/apis/master.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/master/core/jobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/core/jobManger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/master/core/workManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/core/workManger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker/Register.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/Register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/main/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker/main/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/worker/main/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/master/core/job_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/core/job_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/master/core/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/core/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/master/core/log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/core/log_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/master/services/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/master/services/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/JobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/JobManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/crontab.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/crontab.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/executor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/jobLock.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/jobLock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/core/scheduler.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/core/scheduler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/main/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/main/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/services/Executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/services/Executor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/services/jobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/services/jobManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/services/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/services/logManger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/watch_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/watch_register.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +56,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/worker/core" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
@@ -83,7 +79,7 @@
       <recent name="F:\code\002Golang\lwx-crontab\common" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/leiwenxuan/crontab/example/getIp">
+  <component name="RunManager" selected="Go Build.go build github.com/leiwenxuan/crontab/worker/main">
     <configuration name="go build github.com/leiwenxuan/crontab/example/getIp" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="lwx-crontab" />
       <working_directory value="$PROJECT_DIR$" />
@@ -102,7 +98,7 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/leiwenxuan/crontab/worker/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build github.com/leiwenxuan/crontab/worker/main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="lwx-crontab" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -110,6 +106,18 @@
       <package value="github.com/leiwenxuan/crontab/worker/main" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
+    </configuration>
+    <configuration name="go build main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="lwx-crontab" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="github.com/leiwenxuan/crontab/worker/main" />
+      <package value="github.com/leiwenxuan/crontab" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="go build github.com/leiwenxuan/crontab/worker/main" run_configuration_type="GoApplicationRunConfiguration" />
+      </method>
     </configuration>
     <configuration name="TestJobServer_SaveJob in github.com/leiwenxuan/crontab/master/core" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="lwx-crontab" />
@@ -120,6 +128,17 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestJobServer_SaveJob$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="lwx-crontab" />
+      <working_directory value="$PROJECT_DIR$/master/core" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/leiwenxuan/crontab/master/core" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestLogServer_ListLog$" />
       <method v="2" />
     </configuration>
     <configuration name="TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -133,13 +152,21 @@
       <pattern value="^TestLogServer_ListLog$" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build main" />
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/worker/main" />
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/example/getIp" />
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
+      <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core (1)" />
+      <item itemvalue="Go Test.TestJobServer_SaveJob in github.com/leiwenxuan/crontab/master/core" />
+      <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/example/getIp" />
-        <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/worker/main" />
+        <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core (1)" />
         <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
+        <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/example/getIp" />
         <item itemvalue="Go Test.TestJobServer_SaveJob in github.com/leiwenxuan/crontab/master/core" />
-        <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core" />
       </list>
     </recent_temporary>
   </component>
@@ -162,18 +189,26 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2281" y="71" key="#Deployment" timestamp="1580018045563">
+    <state x="2281" y="71" key="#Deployment" timestamp="1580380385195">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state x="2281" y="71" key="#Deployment/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580018045563" />
+    <state x="2281" y="71" key="#Deployment/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580380385195" />
     <state x="2281" y="71" key="#Go_Modules_(vgo)" timestamp="1579964129316">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
     <state x="2281" y="71" key="#Go_Modules_(vgo)/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1579964129316" />
-    <state x="2442" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580130910484">
+    <state x="2281" y="71" key="#Options" timestamp="1580378367700">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state x="2442" y="202" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580130910484" />
+    <state x="2281" y="71" key="#Options/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580378367700" />
+    <state x="2143" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580272941889">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2143" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580272941889" />
+    <state x="2442" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580273114987">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2442" y="202" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580273114987" />
     <state x="2392" y="56" key="#go_build_github.com/leiwenxuan/crontab/worker/main" timestamp="1580186755502">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
@@ -182,46 +217,50 @@
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
     <state x="2344" y="183" key="EditFileWatcherDialog/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580008858816" />
-    <state x="617" y="173" key="FileChooserDialogImpl" timestamp="1580103259570">
+    <state x="617" y="173" key="FileChooserDialogImpl" timestamp="1580537401244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="617" y="173" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580103259570" />
-    <state width="1493" height="64" key="GridCell.Tab.0.bottom" timestamp="1580264024027">
-      <screen x="1920" y="0" width="1536" height="832" />
+    <state x="617" y="173" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580537401244" />
+    <state width="1875" height="278" key="GridCell.Tab.0.bottom" timestamp="1580543253665">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="746" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580179474884" />
-    <state width="1493" height="64" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580264024027" />
-    <state width="1493" height="64" key="GridCell.Tab.0.center" timestamp="1580264024027">
-      <screen x="1920" y="0" width="1536" height="832" />
+    <state width="1875" height="278" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580543253665" />
+    <state width="1493" height="117" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580441267959" />
+    <state width="1875" height="278" key="GridCell.Tab.0.center" timestamp="1580543253664">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="746" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580179474884" />
-    <state width="1493" height="64" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580264024027" />
-    <state width="1493" height="64" key="GridCell.Tab.0.left" timestamp="1580264024027">
-      <screen x="1920" y="0" width="1536" height="832" />
+    <state width="1875" height="278" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580543253664" />
+    <state width="1493" height="117" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580441267958" />
+    <state width="1875" height="278" key="GridCell.Tab.0.left" timestamp="1580543253663">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="746" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580179474882" />
-    <state width="1493" height="64" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580264024027" />
-    <state width="1493" height="64" key="GridCell.Tab.0.right" timestamp="1580264024027">
-      <screen x="1920" y="0" width="1536" height="832" />
+    <state width="1875" height="278" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580543253663" />
+    <state width="1493" height="117" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580441267957" />
+    <state width="1875" height="278" key="GridCell.Tab.0.right" timestamp="1580543253664">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="746" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580179474884" />
-    <state width="1493" height="64" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580264024027" />
-    <state width="1493" height="373" key="GridCell.Tab.1.bottom" timestamp="1580262248352">
+    <state width="1875" height="278" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580543253664" />
+    <state width="1493" height="117" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580441267958" />
+    <state width="1493" height="466" key="GridCell.Tab.1.bottom" timestamp="1580380642691">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1493" height="373" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580262248352" />
-    <state width="1493" height="373" key="GridCell.Tab.1.center" timestamp="1580262248352">
+    <state width="1493" height="466" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580380642691" />
+    <state width="1493" height="466" key="GridCell.Tab.1.center" timestamp="1580380642691">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1493" height="373" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580262248352" />
-    <state width="1493" height="373" key="GridCell.Tab.1.left" timestamp="1580262248352">
+    <state width="1493" height="466" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580380642691" />
+    <state width="1493" height="466" key="GridCell.Tab.1.left" timestamp="1580380642691">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1493" height="373" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580262248352" />
-    <state width="1493" height="373" key="GridCell.Tab.1.right" timestamp="1580262248352">
+    <state width="1493" height="466" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580380642691" />
+    <state width="1493" height="466" key="GridCell.Tab.1.right" timestamp="1580380642691">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1493" height="373" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580262248352" />
+    <state width="1493" height="466" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580380642691" />
     <state x="338" y="69" key="SettingsEditor" timestamp="1580103306790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -231,10 +270,19 @@
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
     <state x="2013" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580017571781" />
-    <state x="2286" y="96" width="803" height="632" key="find.popup" timestamp="1580264801214">
+    <state x="2194" y="11" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580296124633">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state x="2286" y="96" width="803" height="632" key="find.popup/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580264801214" />
+    <state x="2194" y="11" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580296124633" />
+    <state x="458" y="120" width="1004" height="790" key="find.popup" timestamp="1580537739513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="458" y="120" width="1004" height="790" key="find.popup/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1580537739513" />
+    <state x="2286" y="96" width="803" height="632" key="find.popup/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580382801959" />
+    <state x="2556" y="308" key="publish.login" timestamp="1580378299198">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2556" y="308" key="publish.login/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1580378299198" />
     <state x="2431" y="28" key="refactoring.ChangeSignatureDialog" timestamp="1580031924312">
       <screen x="1920" y="0" width="1536" height="832" />
     </state>
@@ -259,7 +307,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/master/apis/master.go</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -269,12 +317,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/worker/core/scheduler.go</url>
-          <line>94</line>
+          <line>92</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/worker/core/scheduler.go</url>
-          <line>73</line>
+          <line>71</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">

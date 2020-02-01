@@ -112,13 +112,13 @@ func (j JobServer) KillJob(name string) (err error) {
 		leaseId        clientv3.LeaseID
 	)
 
-	killKey = JOB_SAVE_DIR + name
+	killKey = JOB_KILLER_DIR + name
 	logrus.Info("killKey： ", killKey)
 	client := base.EtcdClient()
 	kv := clientv3.NewKV(client)
 	lease := clientv3.NewLease(client)
 
-	if leaseGrantResp, err = lease.Grant(context.TODO(), 5); err != nil {
+	if leaseGrantResp, err = lease.Grant(context.TODO(), 1); err != nil {
 		return
 	}
 	// 租约

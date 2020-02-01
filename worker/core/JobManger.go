@@ -10,9 +10,10 @@ import (
 	"github.com/leiwenxuan/crontab/infra/base"
 	"github.com/leiwenxuan/crontab/worker/services"
 	"go.etcd.io/etcd/clientv3"
+	//"go.etcd.io/etcd/mvcc/mvccpb"
 )
 
-var _ services.JobMangerServer = new(JobMangerSer)
+var _ services.JobMangerServer = new(JobServer)
 
 type JobMangerSer struct {
 	Client  *clientv3.Client
@@ -21,16 +22,41 @@ type JobMangerSer struct {
 	Watcher clientv3.Watcher
 }
 
+type JobServer struct {
+}
+
+var (
+	// 单利 模式
+	GJobServer *JobMangerSer
+)
+
+func (j JobServer) InitJobManger() (err error) {
+	client := base.EtcdClient()
+	kv := clientv3.NewKV(client)
+	lease := clientv3.NewLease(client)
+	watcher := clientv3.NewWatcher(client)
+
+	GJobServer = &JobMangerSer{
+		Client:  client,
+		Kv:      kv,
+		Lease:   lease,
+		Watcher: watcher,
+	}
+
+	_ = GJobServer.JobWatch()
+	GJobServer.WatchKiller()
+	return
+}
+
 var onceJob sync.Once
 
 func init() {
 	onceJob.Do(func() {
-		services.IJobMangerServer = new(JobMangerSer)
+		services.IJobMangerServer = new(JobServer)
 	})
-
 }
 
-func (j JobMangerSer) JobWatch() (err error) {
+func (j *JobMangerSer) JobWatch() (err error) {
 	var (
 		getResp  *clientv3.GetResponse
 		job      *services.Job
@@ -74,7 +100,7 @@ func (j JobMangerSer) JobWatch() (err error) {
 					// 构建event
 					jobEvent = services.BuildJobEvent(JOB_EVENT_SAVE, job)
 				case mvccpb.DELETE:
-					jobName := ExtractKillerName(string(watchEvent.Kv.Key))
+					jobName := ExtractJobName(string(watchEvent.Kv.Key))
 
 					job = &services.Job{Name: jobName}
 					jobEvent = services.BuildJobEvent(JOB_EVENT_DELETE, job)
@@ -89,7 +115,7 @@ func (j JobMangerSer) JobWatch() (err error) {
 	return
 }
 
-func (j JobMangerSer) WatchKiller() {
+func (j *JobMangerSer) WatchKiller() {
 	var (
 		watchChan  clientv3.WatchChan
 		watchResp  clientv3.WatchResponse
@@ -113,21 +139,18 @@ func (j JobMangerSer) WatchKiller() {
 						Name: jobName,
 					}
 					jobEvent = services.BuildJobEvent(JOB_EVENT_KILL, job)
-
+					Gscheduler.PushJobEvent(jobEvent)
 				case mvccpb.DELETE:
+					// killer标记过期，被自动删除
 
 				}
-				Gscheduler.PushJobEvent(jobEvent)
 			}
 		}
 	}()
 
 }
 
-func (j JobMangerSer) CreateJobLock(jobName string) (jobLock *services.JobLock) {
-	IjobLock := InitJobLock(jobName)
-	jobLock.Kv = IjobLock.Kv
-	jobLock.Lease = IjobLock.Lease
-	jobLock.JobName = IjobLock.JobName
-	return
+func (j *JobMangerSer) CreateJobLock(jobName string) (jobLock *JobLock) {
+	jobLock = InitJobLock(jobName, j.Kv, j.Lease)
+	return jobLock
 }

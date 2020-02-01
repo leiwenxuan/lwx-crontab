@@ -45,6 +45,6 @@ func TestJobServer_SaveJob(t *testing.T) {
 		fmt.Println("err getresult", err)
 	}
 
-	fmt.Println("get list ")
+	fmt.Println("get list ", getresult)
 
 }

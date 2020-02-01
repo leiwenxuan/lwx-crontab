@@ -7,10 +7,6 @@ func GetJobMangerServer() JobMangerServer {
 }
 
 type JobMangerServer interface {
-	// 监听任务变化
-	JobWatch() (err error)
-	// 监听强杀任务通知
-	WatchKiller()
-	// 创建任务执行锁
-	CreateJobLock(jobName string) (jobLock *JobLock)
+	// 初始化
+	InitJobManger() (err error)
 }
