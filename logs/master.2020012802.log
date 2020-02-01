@@ -1,1 +1,0 @@
-time="2020-01-28T02:57:53+08:00" level=error msg="[github.com/leiwenxuan/crontab/infra/base.(*RegisterEtcd).keepOnline(base/etcd_register.go:107)] register 续租失败2020-01-28 02:57:53" func="github.com/leiwenxuan/crontab/infra/base.(*RegisterEtcd).keepOnline" file="base/etcd_register.go:107"

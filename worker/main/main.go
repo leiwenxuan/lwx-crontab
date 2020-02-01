@@ -6,7 +6,8 @@ import (
 
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
-	_ "github.com/leiwenxuan/crontab/worker"
+
+	//_ "github.com/leiwenxuan/crontab/worker"
 	_ "github.com/leiwenxuan/crontab/worker/core"
 	"github.com/leiwenxuan/crontab/worker/services"
 	"github.com/sirupsen/logrus"
@@ -32,7 +33,13 @@ func main() {
 	app.Start()
 	jobManger := services.GetJobMangerServer()
 	// 初始化job管理器
+<<<<<<< HEAD
 	_ = jobManger.InitJobManger()
+=======
+	logrus.Debug("初始化job管理器")
+	_ = services.GetJobMangerServer().InitJobManger()
+	_ = services.InitRegister()
+>>>>>>> worker
 	// 初始化日志
 	logManger := services.GetLogManger()
 	_ = logManger.InitLogSink()
