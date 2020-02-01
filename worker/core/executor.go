@@ -74,6 +74,17 @@ func InitExecutor() (err error) {
 	G_executor = &Executor{}
 	return
 }
+
 func init() {
+	logrus.Debug("InitExecutor(): 初始化执行器")
 	_ = InitExecutor()
+
 }
+
+//var executoJob sync.Once
+//
+//func init() {
+//	executoJob.Do(func() {
+//		services.IExecutorServer = new(Executor)
+//	})
+//}

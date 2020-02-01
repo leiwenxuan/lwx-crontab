@@ -2,7 +2,6 @@ package main
 
 import (
 	"runtime"
-	"time"
 
 	"github.com/leiwenxuan/crontab/infra"
 	"github.com/leiwenxuan/crontab/infra/base"
@@ -31,20 +30,21 @@ func main() {
 	base.InitLog(conf)
 	app := infra.New(conf)
 	app.Start()
-	jobManger := services.GetJobMangerServer()
+	logrus.Debug("调度器初始化")
+	_ = services.GetSchedulerServer().InitScheduler()
+	// 初始化执行器
+	logrus.Debug("初始化执行器")
+	_ = services.GetExecutorServer().InitExecutor()
+
 	// 初始化job管理器
-<<<<<<< HEAD
-	_ = jobManger.InitJobManger()
-=======
 	logrus.Debug("初始化job管理器")
 	_ = services.GetJobMangerServer().InitJobManger()
 	_ = services.InitRegister()
->>>>>>> worker
 	// 初始化日志
-	logManger := services.GetLogManger()
-	_ = logManger.InitLogSink()
-	for {
-		time.Sleep(1 * time.Second)
-	}
+	_ = services.GetLogManger().InitLogSink()
+	logrus.Debug("初始化日志")
+
+	ch := make(chan int, 1)
+	<-ch
 
 }

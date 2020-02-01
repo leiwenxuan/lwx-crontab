@@ -1,8 +1,4 @@
-<<<<<<< HEAD:worker/main/watch_register.go
-package main
-=======
 package services
->>>>>>> worker:worker/services/starter.go
 
 import (
 	"time"
