@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d84069f-7e9c-4832-ab29-7a69a9dc7f54" name="Default Changelist" comment="" />
+    <list default="true" id="0d84069f-7e9c-4832-ab29-7a69a9dc7f54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +25,7 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1WtLk896A0j2UDXViMqpveHqxeQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,20 +38,20 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\code\002Golang\lwx-crontab\worker" />
+      <recent name="F:\code\002Golang\lwx-crontab\master" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\code\002Golang\lwx-crontab" />
       <recent name="F:\code\002Golang\lwx-crontab\master" />
       <recent name="F:\code\002Golang\lwx-crontab\infra\base" />
       <recent name="F:\code\002Golang\lwx-crontab\common" />
       <recent name="F:\code\002Golang\lwx-crontab\worker\main" />
-      <recent name="F:\code\002Golang\lwx-crontab\master\main" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\code\002Golang\lwx-crontab\worker" />
-      <recent name="F:\code\002Golang\lwx-crontab\master" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build github.com/leiwenxuan/crontab/master/main">
@@ -102,6 +106,13 @@
       <pattern value="^TestLogServer_ListLog$" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/worker/main" />
+      <item itemvalue="Go Test.TestGetIp in github.com/leiwenxuan/crontab/worker/test" />
+      <item itemvalue="Go Test.TestJobServer_SaveJob in github.com/leiwenxuan/crontab/master/core" />
+      <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
