@@ -32,9 +32,6 @@ func main() {
 	app.Start()
 	logrus.Debug("调度器初始化")
 	_ = services.GetSchedulerServer().InitScheduler()
-	// 初始化执行器
-	logrus.Debug("初始化执行器")
-	_ = services.GetExecutorServer().InitExecutor()
 
 	// 初始化job管理器
 	logrus.Debug("初始化job管理器")
@@ -43,6 +40,9 @@ func main() {
 	// 初始化日志
 	_ = services.GetLogManger().InitLogSink()
 	logrus.Debug("初始化日志")
+	// 初始化执行器
+	logrus.Debug("初始化执行器")
+	_ = services.GetExecutorServer().InitExecutor()
 
 	ch := make(chan int, 1)
 	<-ch
