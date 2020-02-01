@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d84069f-7e9c-4832-ab29-7a69a9dc7f54" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/master.2020012913.log" afterDir="false" />
@@ -79,6 +80,9 @@
       <change beforePath="$PROJECT_DIR$/worker/services/jobManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/services/jobManger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker/services/logManger.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/services/logManger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker/watch_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/watch_register.go" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +119,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/worker/core" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="terminal" />
@@ -122,15 +127,30 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\code\002Golang\lwx-crontab\worker\main" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+>>>>>>> master
       <recent name="F:\code\002Golang\lwx-crontab\worker" />
       <recent name="F:\code\002Golang\lwx-crontab\master" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="F:\code\002Golang\lwx-crontab\worker\core" />
       <recent name="F:\code\002Golang\lwx-crontab\worker\services" />
       <recent name="F:\code\002Golang\lwx-crontab\master" />
       <recent name="F:\code\002Golang\lwx-crontab\infra\base" />
       <recent name="F:\code\002Golang\lwx-crontab\common" />
+=======
+      <recent name="F:\code\002Golang\lwx-crontab" />
+      <recent name="F:\code\002Golang\lwx-crontab\master" />
+      <recent name="F:\code\002Golang\lwx-crontab\infra\base" />
+      <recent name="F:\code\002Golang\lwx-crontab\common" />
+      <recent name="F:\code\002Golang\lwx-crontab\worker\main" />
+>>>>>>> master
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build github.com/leiwenxuan/crontab/worker/main">
@@ -207,11 +227,17 @@
       <method v="2" />
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="Go Build.go build main" />
       <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/worker/main" />
       <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/example/getIp" />
       <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
       <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core (1)" />
+=======
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/worker/main" />
+      <item itemvalue="Go Build.go build github.com/leiwenxuan/crontab/master/main" />
+      <item itemvalue="Go Test.TestGetIp in github.com/leiwenxuan/crontab/worker/test" />
+>>>>>>> master
       <item itemvalue="Go Test.TestJobServer_SaveJob in github.com/leiwenxuan/crontab/master/core" />
       <item itemvalue="Go Test.TestLogServer_ListLog in github.com/leiwenxuan/crontab/master/core" />
     </list>
