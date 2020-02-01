@@ -29,6 +29,7 @@ var logOnce sync.Once
 func init() {
 	logOnce.Do(func() {
 		services.ILogMangerServer = new(LogServer)
+
 	})
 }
 
@@ -122,6 +123,7 @@ func (l *LogSink) Append(jobLog *services.JobLog) {
 	case l.LogChan <- jobLog:
 	default:
 		// 队里满了就丢弃
+
 	}
 
 }

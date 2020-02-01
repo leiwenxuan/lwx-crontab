@@ -9,7 +9,7 @@ import (
 	"github.com/leiwenxuan/crontab/worker/services"
 )
 
-var _ services.SchedulerServer = new(SchedulerInterface)
+var _ services.SchedulerServer = new(SchedulerJobSer)
 
 type SchedulerSer struct {
 	jobEventChan      chan *services.JobEvent              // etcd任务事件队列
@@ -22,10 +22,10 @@ var (
 	Gscheduler *SchedulerSer
 )
 
-type SchedulerInterface struct {
+type SchedulerJobSer struct {
 }
 
-func (s SchedulerInterface) InitScheduler() (err error) {
+func (s SchedulerJobSer) InitScheduler() (err error) {
 	Gscheduler = &SchedulerSer{
 		jobEventChan:      make(chan *services.JobEvent, 1000),
 		jobPlanTable:      make(map[string]*services.JobSchedulePlan),
@@ -42,8 +42,9 @@ var onceScheduler sync.Once
 
 func init() {
 	onceScheduler.Do(func() {
-		services.ISchedulerServer = new(SchedulerInterface)
-
+		services.ISchedulerServer = new(SchedulerJobSer)
+		logrus.Debug("调度器初始化")
+		_ = services.GetSchedulerServer().InitScheduler()
 	})
 }
 

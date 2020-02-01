@@ -88,6 +88,7 @@ func (j *JobLock) TryLock() (err error) {
 	if txnResp, err = txn.Commit(); err != nil {
 		goto FAIL
 		fmt.Println("txn.Commit(): ", err)
+
 	}
 
 	// 6,成功返回，失败释放租约
@@ -95,6 +96,7 @@ func (j *JobLock) TryLock() (err error) {
 		// 锁被占用
 		err = ERR_LOCK_ALREADY_REQUIRED
 		fmt.Println("!txnResp.Succeeded ", err)
+
 		goto FAIL
 	}
 	// 抢锁成功
