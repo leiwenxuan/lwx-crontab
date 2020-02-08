@@ -18,10 +18,10 @@ build(){
     -v ${SOURCE_FILE_NAME}.go
     chmod +x ${tname}
     mv ${tname} ${TARGET_FILE_NAME}${EXT}
-    if [ ${GOOS} == "windows" ];then
-        zip ${tname}.zip ${TARGET_FILE_NAME}${EXT} config.ini ../public/
+    if [ ${GOOS} == "windows11" ];then
+        zip ${tname}.zip ${TARGET_FILE_NAME}${EXT} config.ini
     else
-        tar --exclude=*.gz  --exclude=*.zip  --exclude=*.git -czvf ${tname}.tar.gz ${TARGET_FILE_NAME}${EXT} config.ini *.sh ../public/ -C ./ .
+        tar  --exclude=*.log --exclude=*.gz  --exclude=*.zip  --exclude=*.git -czvf ${tname}.tar.gz ${TARGET_FILE_NAME}${EXT} config.ini *.sh  -C ./ .
     fi
     mv ${TARGET_FILE_NAME}${EXT} ${tname}
 

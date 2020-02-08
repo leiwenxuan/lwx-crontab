@@ -31,5 +31,11 @@ func (s *MongoDBStarter) Setup(ctx infra.StarterContext) {
 		logrus.Error("mongo 连接失败", err)
 		return
 	}
+	err = client.Ping(context.TODO(), nil)
+	if err != nil {
+		logrus.Fatal(err)
+	}
+
+	logrus.Debug("Connected to MongoDB!")
 	clientMongo = client
 }

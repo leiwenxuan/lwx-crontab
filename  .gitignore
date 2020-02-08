@@ -1,3 +1,9 @@
 *.log
 *.temp
 /vendor
+/logs
+./logs/*.log
+
+/master/main/config.ini
+/worker/main/config.ini
+

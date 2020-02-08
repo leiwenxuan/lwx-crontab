@@ -48,6 +48,7 @@ func (s *EtcdStarter) Setup(ctx infra.StarterContext) {
 
 	// 建立连接
 	if client, err = clientv3.New(config); err != nil {
+		panic(err)
 		return
 	}
 	clientEtcd = client

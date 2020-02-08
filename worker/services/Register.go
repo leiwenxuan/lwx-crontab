@@ -71,9 +71,8 @@ func InitRegister() (err error) {
 	kv = clientv3.NewKV(client)
 	lease = clientv3.NewLease(client)
 	// 获取本机IP
-	if localIp, err = GetLocalIP(); err != nil {
-		return
-	}
+	localIp = GetOutboundIP()
+
 	GRegister = &RegisterEtcd{
 		client:  client,
 		kv:      kv,
@@ -164,4 +163,17 @@ func GetLocalIP() (ipv4 string, err error) {
 	}
 	err = errors.New("没有找到网卡IP")
 	return
+}
+
+// Get preferred outbound ip of this machine
+func GetOutboundIP() string {
+	conn, err := net.Dial("udp", "8.8.8.8:80")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	localAddr := conn.LocalAddr().(*net.UDPAddr)
+	fmt.Println(localAddr.String())
+	return localAddr.IP.String()
 }

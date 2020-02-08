@@ -55,7 +55,6 @@ func (m *MasterApi) Init() {
 	// 菜单栏
 
 	groupRouter.Get("/menus", m.Menus)
-
 }
 
 type LoginUser struct {
