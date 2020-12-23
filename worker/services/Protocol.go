@@ -125,10 +125,7 @@ func BuildResponse(errno int, msg string, data interface{}) (resp []byte, err er
 
 // 反序列化成Job
 func UnpackJob(value []byte) (ret *Job, err error) {
-	var (
-		job *Job
-	)
-	job = &Job{}
+	var job *Job = &Job{}
 	if err = json.Unmarshal(value, job); err != nil {
 		return
 	}
